@@ -1,0 +1,54 @@
+abstract class Shape {
+    public abstract double getArea();
+}
+class Rectangle extends Shape
+{
+    protected double length;
+    protected double width;
+
+    public Rectangle(double l, double w) {
+        length = l;
+        width = w;
+    };
+    public double getArea() {
+        return length*width;
+    }
+
+}
+class Circle extends Shape
+{
+    protected double radius;
+
+    public Circle(double r) {
+        radius = r;
+
+    };
+    public double getArea() {
+        return radius*radius*3.14;
+    }
+}
+class CalculateAreas {
+    private double area;
+
+    public double calcArea(Shape s) {
+        area = s.getArea();
+        return area;
+    }
+}
+public class OpenClosed {
+    public static void main(String args[]) {
+
+        System.out.println("Hello World");
+
+        CalculateAreas ca = new CalculateAreas();
+
+        Rectangle r = new Rectangle(1,2);
+
+        System.out.println("Area = "+ ca.calcArea(r));
+
+        Circle c = new Circle(3);
+
+        System.out.println("Area = "+ ca.calcArea(c));
+
+    }
+}

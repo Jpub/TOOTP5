@@ -1,0 +1,34 @@
+class Rectangle{
+    protected double length;
+    protected double width;
+
+    public Rectangle(double l, double w) {
+        length = l;
+        width = w;
+    };
+}
+class CalculateAreas {
+
+    private double area;
+
+    public double calcArea(Rectangle r) {
+
+        area = r.length * r.width;
+
+        return area;
+
+    }
+}
+public class OpenClosed {
+    public static void main(String args[]) {
+
+        System.out.println("Hello World");
+
+        Rectangle r = new Rectangle(1,2);
+
+        CalculateAreas ca = new CalculateAreas ();
+
+        System.out.println("Area = "+ ca.calcArea(r));
+
+    }
+}

@@ -1,0 +1,20 @@
+public class TestShape {
+    public static void main(String args[]) {
+
+        System.out.println("Hello World!"); 
+
+        Circle circle = new Circle(1);
+
+        Shape[] shapeArray = new Shape[1]; 
+        shapeArray[0] = circle;
+
+        CalculateAreas ca = new CalculateAreas(shapeArray);
+
+        CalculateAreas sum = new CalculateAreas(shapeArray);
+        OutputAreasoAreas = new OutputAreas(sum.sumAreas());
+		
+        oAreas.console();    // output to console
+        oAreas.HTML();       // output to HTML
+
+    }
+}

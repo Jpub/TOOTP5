@@ -1,0 +1,40 @@
+abstract class Shape{
+    protected double area;
+
+    public abstract double calcArea();
+}
+class Rectangle extends Shape{
+    private double length;
+    private double width;
+
+    public Rectangle(double l, double w){
+        length = l;
+        width = w;
+    }
+    public double calcArea() {
+        area = length*width;
+        return (area);
+    };
+
+}
+class Square extends Rectangle{
+    public Square(double s){
+        super(s, s);
+    }
+}
+
+public class LiskovSubstitution {
+    public static void main(String args[]) {
+
+        System.out.println("Hello World");
+
+        Rectangle r = new Rectangle(1,2);
+
+        System.out.println("Area = "+ r.calcArea());
+
+        Square s = new Square(2);
+
+        System.out.println("Area = "+ s.calcArea());
+
+    }
+}

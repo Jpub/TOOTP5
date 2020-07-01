@@ -1,0 +1,24 @@
+interface IEat {
+    public void eat();  
+}
+interface IMakeNoise {
+    public void makeNoise();
+}
+class Dog implements IEat, IMakeNoise {
+    public void eat() {
+        System.out.println("Dog is eating");
+    }
+    public void makeNoise() {
+        System.out.println("Dog is making noise");
+    }
+}
+public class MyClass {
+    public static void main(String args[]) {
+
+        System.out.println("Hello World");
+
+        Dog fido = new Dog();
+        fido.eat();
+        fido.makeNoise();
+    }
+}

@@ -1,0 +1,75 @@
+abstract class Shape{
+    protected String name;
+    protected double area;
+    public abstract double calcArea();
+}
+class Circle extends Shape{
+    private double radius;
+
+    public Circle(double r) {
+        radius = r;
+    }
+    public double calcArea() {
+        area = 3.14*(radius*radius);
+        return (area);
+    };
+}
+
+class CalculateAreas {
+    Shape[] shapes;
+    double sumTotal=0;
+			
+    public CalculateAreas(Shape[] sh){	
+        this.shapes = sh;
+    }
+
+    public double sumAreas() {	
+        sumTotal=0;
+	
+        for (int i=0; i<shapes.length; i++) {
+		
+            sumTotal = sumTotal + shapes[i].calcArea();
+		
+        }
+	
+        return sumTotal;
+    }
+}
+class OutputAreas {
+    double areas=0;		
+			
+    public OutputAreas(double a){
+        this.areas = a;
+    }
+    public void console() {
+        System.out.println("Total of all areas = " + areas);	
+    }
+
+    public void HTML() {
+		
+        System.out.println("<HTML>");	
+        System.out.println("Total of all areas = " + areas);	
+        System.out.println("</HTML>");	
+	
+    }
+}
+public class TestShape {
+    public static void main(String args[]) {
+
+        System.out.println("Hello World!"); 
+
+        Circle circle = new Circle(1);
+
+        Shape[] shapeArray = new Shape[1]; 
+        shapeArray[0] = circle;
+
+        CalculateAreas ca = new CalculateAreas(shapeArray);
+
+        CalculateAreas sum = new CalculateAreas(shapeArray);
+        OutputAreas oAreas = new OutputAreas(sum.sumAreas());
+		
+        oAreas.console();    // output to console
+        oAreas.HTML();       // output to HTML
+
+    }
+}
